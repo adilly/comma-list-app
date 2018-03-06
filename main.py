@@ -1,5 +1,7 @@
 from openpyxl import load_workbook, workbook
 
+# Execution python -c 'import main; main.convertsql(1)'
+
 def convertsql(dataType):
     #dataType from manual? 
     # Can you pull dataType based on column value? 
@@ -9,12 +11,14 @@ def convertsql(dataType):
     ws = wb.active
     firstColumn = ws['A']
 
-# if dataType = string 
-    """ for x in range(len(firstColumn)):
-        print(firstColumn[x].value) +"" """
-# else dataType = number
-    for x in range(len(firstColumn)):
-        print(firstColumn[x].value)
+    if type(dataType) is str:
+        for x in range(len(firstColumn)):
+            print(firstColumn[x].value + ' ')
+    elif type(dataType) is int:
+        for x in range(len(firstColumn)):
+            print(firstColumn[x].value)
+    else:
+        print('This is not a valid SQL type.')
 # else dataType = junk
     # then junk
 
