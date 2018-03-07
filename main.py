@@ -10,15 +10,21 @@ def convertsql(dataType):
     # source from xlsx or txt or made copy command???
     ws = wb.active
     firstColumn = ws['A']
-
-    if type(dataType) is str:
+    #print(isinstance(input(),str))
+    if isinstance(input(),str):
+        print("str")
         for x in range(len(firstColumn)):
-            print(firstColumn[x].value + ' ')
-    elif type(dataType) is int:
+            print("'",firstColumn[x].value,"',")
+        return
+    elif isinstance(input(),int):
+        print("int")
         for x in range(len(firstColumn)):
             print(firstColumn[x].value)
+        return
     else:
         print('This is not a valid SQL type.')
+        return None
+    
 # else dataType = junk
     # then junk
 
