@@ -3,18 +3,12 @@ import pandas as pd
 # Execution python -c 'import panda; panda.convertsql(1)'
 
 def convertsql(dataType):
-    wb = (pd.read_clipboard())
+    wb = (pd.read_clipboard(header=None))
 
-    header = list(wb)
+    for ind, values in wb.iteritems():
+        print(values)
 
-    #REMOVE value from list
-    print(header)
-
-    #APPEND value to dataframe
-    wb.append(header)
-
-    
-    print(wb.values)
+    #print(wb.values)
 
     
 
