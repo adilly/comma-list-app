@@ -12,19 +12,19 @@ import pandas as pd
 
 def convertsql():
     wb = (pd.read_clipboard(header=None).values)
-    for x in wb:
-        print(isinstance(x,str))
-        print(type(x))
-        print(x,"test")
-    """ elif isinstance(wb,int):
+
+    if wb.dtype == 'int64':
         for x in wb:
-            print("test",x,"test")
-        return
+            print(x,"test")
+
+    elif wb.dtype == 'str':
+            for x in wb:
+                print("test",x,"test")
     else:
         print('This is not a valid SQL type.')
-        return None """
-        
-    #print(wb.values)
+        return None
+            
+        #print(wb.values)
 
     
 
