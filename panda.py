@@ -25,8 +25,12 @@ def convertsql():
             else :
                 print(int(str(x).replace("[","").replace("]","")))
     elif wb.dtype == 'object':
-            for x in wb:
-                print(int(x.replace("[","").replace("]","")),",")
+        for x in wb:
+            if count < len(wb):
+                print(str(x).replace("[","").replace("]",""),",")
+                count+=1
+            else:
+                print(str(x).replace("[","").replace("]",""))
     else:
         print('This is not a valid SQL type.')
         return None
