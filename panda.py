@@ -9,17 +9,24 @@ import pandas as pd
 45254
 24245
 """
+"""
+test1
+test2
+"""
 
 def convertsql():
     wb = (pd.read_clipboard(header=None).values)
-
+    count = 1
     if wb.dtype == 'int64':
         for x in wb:
-            print(x,"test")
-
-    elif wb.dtype == 'str':
+            if count < len(wb):
+                print(int(str(x).replace("[","").replace("]","")),",")
+                count+=1
+            else :
+                print(int(str(x).replace("[","").replace("]","")))
+    elif wb.dtype == 'object':
             for x in wb:
-                print("test",x,"test")
+                print(int(x.replace("[","").replace("]","")),",")
     else:
         print('This is not a valid SQL type.')
         return None
